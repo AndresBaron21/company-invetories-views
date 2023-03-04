@@ -1,0 +1,71 @@
+@import "../../../scss/index.scss";
+
+.login {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .apart {
+    padding: 1rem;
+  }
+  .five,
+  .one .input-details {
+    border-radius: 8px;
+  }
+  @media only screen and (min-width: 769px) {
+    .one {
+      grid-column: 2 / 4;
+      grid-row: 2 / 5;
+      background: $third;
+    }
+    .five {
+      grid-column: 4 / 6;
+      grid-row: 2 / 5;
+      background: $third;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .one {
+      grid-column: 1 / 7;
+      grid-row: 4 / 7;
+      background: $third;
+    }
+    .five {
+      grid-column: 1 / 7;
+      grid-row: 1 / 4;
+      background: $third;
+    }
+  }
+
+  .login-button {
+    background: $primary;
+  }
+
+  .sing-up-button {
+    background: rgb(0, 202, 0);
+  }
+
+  .input-details {
+    background: $third;
+    border-color: $primary;
+  }
+
+  .input-details:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -2px;
+    border-radius: inherit;
+    background: linear-gradient(to right, $primary, $secondary);
+  }
+
+  .title-details {
+    color: $primary;
+  }
+}

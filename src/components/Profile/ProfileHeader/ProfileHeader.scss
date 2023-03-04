@@ -1,0 +1,72 @@
+@import "../../../scss/index.scss";
+
+.profile-header {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .cover-photo-profile {
+    border-radius: 0px 0px 8px 8px;
+  }
+
+  @media only screen and (min-width: 769px) {
+    .cover-photo-profile {
+      grid-column: 2 / 7;
+      grid-row: 1 / 4;
+      width: 100%;
+      height: 20rem;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .cover-photo {
+      width: 100%;
+    }
+    .profile-picture {
+      grid-column: 4;
+      grid-row: 3 / 4;
+      width: 12rem;
+      height: 12rem;
+      overflow: hidden;
+      z-index: -1;
+      border: 10px solid $secondary;
+      border-radius: 160px;
+      background: #00618e;
+      background: radial-gradient(
+        circle,
+        #00618e 0%,
+        rgba(22, 23, 24, 1) 38%
+      );
+    }
+    .photo-profile {
+      width: 100%;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .cover-photo-profile {
+      grid-column: 1 / 8;
+      grid-row: 1 / 4;
+      width: 100%;
+      height: 13rem;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .cover-photo {
+      width: 100%;
+    }
+    .profile-picture {
+      grid-column: 4;
+      grid-row: 2 / 4;
+      border-radius: 160px;
+      width: 13rem;
+      height: 13rem;
+      overflow: hidden;
+      z-index: -1;
+      border: 10px solid $secondary;
+    }
+    .photo-profile {
+      width: 110%;
+    }
+  }
+}

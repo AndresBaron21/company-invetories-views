@@ -1,0 +1,47 @@
+@import "../../scss/index.scss";
+
+.profile-container {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .header {
+    grid-column: 1 / 7;
+    grid-row: 1 / 4;
+    // background-color: #00b3ff11;
+    z-index: -1;
+    background: rgb(22, 23, 24);
+    background: linear-gradient(
+      0deg,
+      rgba(22, 23, 24, 0) 0%,
+      #00618e 100%
+    );
+  }
+  .profile-header {
+    grid-column: 2 / 6;
+    grid-row: 1 / 4;
+  }
+
+  @media only screen and (min-width: 769px) {
+    .profile-body {
+      grid-column: 2 / 6;
+      grid-row: 4 / 11;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .profile-body {
+      grid-column: 1 / 7;
+      grid-row: 4 / 11;
+    }
+  }
+  .tap-list {
+    background: none;
+    list-style: none;
+  }
+  li:focus {
+    color: $primary !important;
+    outline: none;
+  }
+}

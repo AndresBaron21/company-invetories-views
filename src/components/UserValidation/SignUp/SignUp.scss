@@ -1,0 +1,18 @@
+@import "../../../scss/index.scss";
+
+.sign-up {
+  .sing-up-button {
+    background: rgb(0, 202, 0);
+  }
+
+  @media only screen and (min-width: 769px) {
+    .separate-boxes {
+      padding: 0.5rem;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .separate-boxes {
+      padding: 0.1rem;
+    }
+  }
+}

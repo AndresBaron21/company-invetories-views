@@ -1,0 +1,59 @@
+@import "../../scss/index.scss";
+
+.companies {
+  .page-header {
+    padding-block: 1rem;
+    background-size: cover;
+    color: white;
+  }
+  .card-details {
+    height: 25rem;
+    margin-bottom: 1rem;
+    color: rgb(0, 0, 0);
+    @media only screen and (min-width: 390px) {
+      width: 20.5rem;
+    }
+    @media only screen and (max-width: 389px) {
+      width: 15.5rem;
+    }
+    padding: 0rem;
+    text-decoration: none;
+    border-radius: 8px;
+  }
+  .card-details:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -2px;
+    border-radius: inherit;
+    background: linear-gradient(to right, $primary, $secondary);
+  }
+  .select-details {
+    background-color: $primary;
+    border-color: $primary;
+    border-radius: 8px;
+  }
+
+  .selection-options:hover {
+    background-color: $primary !important;
+  }
+
+  .card-title {
+    height: 1.5rem;
+    overflow: hidden;
+  }
+  .card-text {
+    height: 3rem;
+    overflow: hidden;
+  }
+  .card-img-top {
+    overflow: hidden;
+  }
+  .img-top {
+    width: 100%;
+  }
+}

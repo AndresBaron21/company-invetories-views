@@ -1,0 +1,45 @@
+@import "./colors.scss";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $secondary !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.section-title {
+  font-family: system-ui;
+  @media only screen and (min-width: 390px) {
+    font-size: 1.8rem;
+  }
+  @media only screen and (max-width: 389) {
+    font-size: 1.2rem;
+  }
+}
+
+.section-subtitle {
+  font-size: 1rem !important;
+}
+
+.text-details {
+  color: $four !important;
+  padding-left: 1rem;
+  text-align: left;
+}
+
+.icons-details {
+  font-size: 150%;
+  color: $primary;
+}
+
+.pull-apart {
+  padding: 1rem 0rem;
+}

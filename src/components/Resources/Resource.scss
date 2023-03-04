@@ -1,0 +1,36 @@
+@import "../../scss/index.scss";
+
+.resource-lesson {
+  .card-details {
+    background: $third;
+    color: #fff;
+    border: none;
+  }
+  .scroll-resource {
+    display: block;
+    width: 100%;
+    // height: 32rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    padding: 0.25rem;
+  }
+
+  .scroll-resource::-webkit-scrollbar-track {
+    border: 0px solid $primary;
+    border-radius: 8px;
+  }
+
+  .scroll-resource::-webkit-scrollbar-thumb {
+    background-color: $primary;
+    border-radius: 8px;
+  }
+
+  .scroll-resource::-webkit-scrollbar-button {
+    height: 3%; //for horizontal scrollbar
+  }
+
+  .scroll-resource::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+}

@@ -1,0 +1,13 @@
+@import "../../../scss/index.scss";
+
+.information {
+  .information-details {
+    background-color: #00b3ff1c;
+    border-radius: 8px;
+  }
+  .list-group-item {
+    background-color: transparent;
+    border-left: none;
+    border-right: none;
+  }
+}

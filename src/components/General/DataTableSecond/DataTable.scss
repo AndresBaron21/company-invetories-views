@@ -1,0 +1,28 @@
+.sc-dIfARi {
+  margin-top: 1rem;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.sc-iJnaPW {
+  border-radius: 0px 0px 8px 8px;
+}
+
+.sc-dmctIk  {
+  border-radius: 0px !important;
+}
+
+.select-filter {
+  height: 32px;
+  width: 200px;
+  border-radius: 3px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border: 1px solid #e5e5e5;
+  padding: 0 32px 0 16px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

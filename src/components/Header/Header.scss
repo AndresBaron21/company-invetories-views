@@ -1,0 +1,55 @@
+@import "../../scss/index.scss";
+
+.header {
+  .nav {
+    background-color: $third;
+    padding: 0.3em;
+    text-decoration: none;
+  }
+
+  a {
+    cursor:pointer;
+  }
+  
+  .icons-details-nav {
+    @media only screen and (min-width: 390px) {
+      font-size: 200% !important;
+    }
+    @media only screen and (max-width: 389px) {
+      font-size: 150%;
+    }
+    color: #ffffff !important;
+  }
+  
+  .section-title-header {
+    font-family: system-ui;
+    color: $primary;
+    @media only screen and (min-width: 822px) {
+      padding: 1rem;
+      font-size: 1.8rem;
+    }
+    @media only screen and (max-width: 821px) {
+      padding: 1rem 0rem 0.5rem 0rem;
+      font-size: 1.1rem;
+    }
+  }
+  
+  .link {
+    color: #ffffff;
+    text-decoration: none;
+    &:focus,
+    &:hover,
+    &:visited,
+    &:link,
+    &:active {
+      text-decoration: none;
+    }
+  }
+  
+  .dropdown-toggle::after {
+    display: none !important;
+  }
+  .space-sides {
+    padding: 0rem 0.9rem 0rem 0.9rem !important;
+  }
+}

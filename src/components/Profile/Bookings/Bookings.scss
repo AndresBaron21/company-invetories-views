@@ -1,0 +1,75 @@
+@import "../../../scss/index.scss";
+
+.completed-studies {
+  .space {
+    margin-bottom: 1rem;
+  }
+  .tap-list {
+    text-decoration: none;
+  }
+  .card-title {
+    height: 1.5rem;
+    overflow: hidden;
+  }
+  .card-text {
+    height: 6.3rem;
+    overflow: hidden;
+  }
+  .card-img-top {
+    overflow: hidden;
+  }
+  .img-top {
+    width: 100%;
+  }
+  .card-details {
+    background: $third;
+    color: #fff;
+    height: 20.7rem;
+    @media only screen and (min-width: 390px) {
+      width: 16.5rem;
+    }
+    @media only screen and (max-width: 389px) {
+      width: 14rem;
+    }
+    text-decoration: none;
+    border-radius: 8px;
+  }
+  .media-scroller {
+    display: grid;
+    grid-auto-flow: column;
+  }
+
+  .media-scroller {
+    @media only screen and (min-width: 821px) {
+      grid-auto-columns: 34%;
+    }
+    @media only screen and (max-width: 821px) {
+      grid-auto-columns: 100%;
+    }
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .scroll {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 100%;
+  }
+
+  .scroll::-webkit-scrollbar {
+    height: 10px;
+  }
+
+  .scroll::-webkit-scrollbar-track {
+    border: 0px solid $primary;
+    border-radius: 8px;
+  }
+
+  .scroll::-webkit-scrollbar-thumb {
+    background-color: $primary;
+    border-radius: 8px;
+  }
+
+  .scroll::-webkit-scrollbar-button {
+    width: 20%; //for horizontal scrollbar
+  }
+}

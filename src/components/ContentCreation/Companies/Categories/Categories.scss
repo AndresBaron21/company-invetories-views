@@ -1,0 +1,59 @@
+@import "../../../../scss/index.scss";
+
+.categories-component {
+  padding-top: 1rem;
+  border-radius: 8px;
+
+  .left {
+    float: left;
+  }
+
+  .right {
+    float: right;
+  }
+
+  .tittle-tabs {
+    padding: 0.4em;
+    border-radius: 8px;
+    list-style: none;
+  }
+
+  .tap-list {
+    background: none;
+  }
+
+  .table-details {
+    // border-radius: 8px;
+  }
+
+  .rdt_TableHeadRow {
+    background: $primary;
+    color: $four;
+  }
+
+  .rdt_TableRow {
+    background: white;
+    color: $five;
+  }
+
+  li:focus {
+    color: $primary !important;
+    outline: none;
+  }
+
+  .modal-button {
+    background: $primary;
+    border: none;
+  }
+
+  .list-details {
+    border-radius: 8px;
+  }
+
+  .img-data-table {
+    height: 35px;
+  }
+  .card-img-top {
+    width: 14rem;
+  }
+}
