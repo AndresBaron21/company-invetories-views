@@ -11,32 +11,40 @@ const submitCredentials = (props) => {
         record.email &&
         record.password
     ) {
-        try {
-            axios
-                .post(URL.BASE_URL + '/auth/login', {
-                    email: record.email,
-                    password: record.password
-                })
-                .then((response) => {
-                    if (response.data.status == true && response.data.token != null) {
-                        localStorage.setItem('TOKEN', response.data.token)
-                        localStorage.setItem('VALIDATION', response.data.status)
-                        localStorage.setItem('ROLES', JSON.stringify(response.data.roles))
-                        localStorage.setItem('ID', response.data.id)
-                        props.props.validation(true)
-                        props.redirectHome()
-                    } else if (response.data.status == '401') {
-                        const data = {
-                            title: 'Credentials do not match',
-                            text: response.data.message,
-                            icon: 'error',
-                        }
-                        plainAlert(data)
-                    }
-                });
-        } catch (error) {
-            console.log(error)
-        }
+        var data = JSON.stringify({
+            "email": record.email,
+            "password": record.password
+          });
+          
+          var config = {
+            method: 'post',
+          maxBodyLength: Infinity,
+            url: URL.BASE_URL + '/auth/login',
+            headers: { 
+              'Content-Type': 'application/json'
+            },
+            data : data
+          };
+          
+          axios(config)
+          .then(function (response) {
+            if (response.data.status == true && response.data.token != null) {
+                localStorage.setItem('TOKEN', response.data.token)
+                localStorage.setItem('VALIDATION', response.data.status)
+                localStorage.setItem('ROLES', JSON.stringify(response.data.roles))
+                localStorage.setItem('ID', response.data.id)
+                props.props.validation(true)
+                props.redirectHome()
+            }
+          })
+          .catch(function (error) {
+            const data = {
+                title: 'Credentials do not match',
+                icon: 'error',
+            }
+            plainAlert(data)
+            // console.log(error);
+          });
     } else {
         const data = {
             title: 'Incomplete application',

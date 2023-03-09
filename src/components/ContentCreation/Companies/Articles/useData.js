@@ -158,7 +158,6 @@ const useInfo = ({ params }) => {
     const urlPDF = URL.BASE_URL + '/article/pdf';
 
     const getPDF = () => {
-        console.log('heeee')
         var data = JSON.stringify({
             "category_id": params.id,
         });
@@ -174,7 +173,6 @@ const useInfo = ({ params }) => {
                 }
             })
                 .then((response) => {
-                    console.log('hiiiiii')
                         const url = window.URL.createObjectURL(new Blob([response.data]));
                         const link = document.createElement('a');
                         link.href = url;
