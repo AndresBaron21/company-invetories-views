@@ -25,7 +25,7 @@ const PublicHome = () => {
                     <div className="background background7"></div>
                     <div className="background background8"></div>
                     <div className="criterion">
-                        <div className="text text0"></div>
+                        <div className="text text0"> </div>
                         <div className="text text1"></div>
                         <div className="text text2">R</div>
                         <div className="text text3">E</div>
