@@ -31,7 +31,7 @@ const Advertising = (props) => {
                                 <input type="password" className="form-control" placeholder="New password" name="password" onChange={handleChange} />
                             </div>
                             <div className="form-text separate-boxes">
-                                By clicking Sign Up, you agree to our Terms, Data Policy and Cookies Policy. You may receive SMS Notifications from us and can opt out any time. I HAVE TO CHAGE THIS
+                                By clicking Sign Up, you agree to our Terms, Data Policy and Cookies Policy. Hired
                             </div>
                         </div>
                         <div className="modal-footer">

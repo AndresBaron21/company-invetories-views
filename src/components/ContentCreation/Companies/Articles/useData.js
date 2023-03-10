@@ -7,6 +7,23 @@ import { plainAlert, confirmationAlert } from '../../../hooks/useAlertWindows'
 
 
 const makeRequest = (props) => {
+    const alert = (response) => {
+        var title = '';
+        var icon = '';
+        if (response.status === 200 || response.status === 201) {
+            title = 'Successful request'
+            icon = 'success'
+        } else if (response.status === 400 || response.status === 500) {
+            title = 'Incomplete application'
+            icon = 'error'
+        }
+        const data = {
+            title: title,
+            text: response.data.message,
+            icon: icon,
+        }
+        return data;
+    }
     try {
         axios({
             method: 'post',
@@ -18,24 +35,20 @@ const makeRequest = (props) => {
             }
         })
             .then((response) => {
-                props.props.props.updateData(!props.props.props.updateDataTable)
-                var title = '';
-                var icon = '';
-                if (response.status === 200 || response.status === 201) {
-                    title = 'Successful request'
-                    icon = 'success'
-                } else if (response.status === 400) {
-                    title = 'Incomplete application'
-                    icon = 'error'
+                let data = {};
+                if (props.props !== undefined) {
+                    if (props.props.props.type === 'create' || props.props.props.type === 'update')
+                    {
+                        props.props.props.updateData(!props.props.props.updateDataTable)
+                        data = alert(response)
+                        plainAlert(data)
+                        props.props.setData({})
+                        props.props.cleanForm(props.props)
+                    } 
+                } else {
+                    data = alert(response)
+                    plainAlert(data)
                 }
-                const data = {
-                    title: title,
-                    text: response.data.message,
-                    icon: icon,
-                }
-                plainAlert(data)
-                props.props.setData({})
-                props.props.cleanForm(props.props)
             });
     } catch (error) {
         console.log(error)
@@ -79,6 +92,37 @@ const newRecord = (props) => {
     }
 
 
+}
+
+const sendPDFEmail = ({categoryID, data}) => {
+    const record = data;
+        if (
+            record.senderEmail &&
+            record.senderPassword &&
+            record.emailRecipient &&
+            record.subject &&
+            record.message 
+        ) {
+            var data = JSON.stringify({
+                "category_id": categoryID,
+                "sender_email": record.senderEmail,
+                "sender_password": record.senderPassword,
+                "email_recipient": record.emailRecipient,
+                "subject": record.subject,
+                "message": record.message,
+            });
+
+            const conditionalUrl = '/article/send-email';
+            makeRequest({ conditionalUrl, data })
+        } else {
+            const data = {
+                title: "Incomplete application",
+                text: "All fields must be completed",
+                icon: "error",
+            }
+            plainAlert(data)
+        }
+  
 }
 
 const deleteRecord = (props) => {
@@ -245,4 +289,4 @@ const useInfo = ({ params }) => {
     }
 };
 
-export { newRecord, useInfo, };
+export { newRecord, useInfo, sendPDFEmail };

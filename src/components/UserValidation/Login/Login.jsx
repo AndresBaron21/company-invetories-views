@@ -18,7 +18,7 @@ const Login = (props) => {
         <section className="login">
             <div className="wrapper">
                 <div className="one">
-                    <h2 className="section-title container title-details">Company inventaries</h2>
+                    <h2 className="section-title container center title-details">Company inventaries</h2>
                 </div>
                 <div className="five">
                     <div className="container">
